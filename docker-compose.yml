@@ -26,6 +26,17 @@ services:
       - "8000:8000"
     depends_on:
       - db
+  vue:
+    restart: always
+    image: vue
+    build: ./frontend/
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - web
+
   documentation:
     restart: always
     build: ./

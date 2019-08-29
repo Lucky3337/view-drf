@@ -3,10 +3,14 @@ from django.urls import path, re_path, include, reverse_lazy
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic.base import RedirectView
+from rest_framework.routers import DefaultRouter
 
 from .users.views import register, token, refresh_token, revoke_token, \
     UserList, UserDetails, CatList, CatDetails
 
+router = DefaultRouter()
+
+# router.register(r'users', UserCreateViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
