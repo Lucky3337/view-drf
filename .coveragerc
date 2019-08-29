@@ -1,0 +1,10 @@
+[run]
+branch = True
+omit = *migrations*,
+       *urls*,
+       *test*,
+       *admin*,
+       ./manage.py,
+       ./view_drf/config/*,
+       ./view_drf/wsgi.py,
+       *__init__*
