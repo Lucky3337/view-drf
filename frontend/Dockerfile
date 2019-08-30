@@ -1,7 +1,7 @@
-FROM node:lts-alpine
+FROM node
 
 # устанавливаем простой HTTP-сервер для статики
-RUN npm install -g http-server
+#RUN npm install -g http-server
 
 # делаем каталог 'app' текущим рабочим каталогом
 WORKDIR /app
@@ -19,4 +19,17 @@ COPY . .
 RUN npm run build
 
 EXPOSE 8080
-CMD [ "http-server", "dist" ]
+CMD [ "node", "server.js" ]
+# этап сборки (build stage)
+#FROM node:lts-alpine as build-stage
+#WORKDIR /app
+#COPY package*.json ./
+#RUN npm install
+#COPY . .
+#RUN npm run build
+#
+## этап production (production-stage)
+#FROM nginx:stable-alpine as production-stage
+#COPY --from=build-stage /app/dist /usr/share/nginx/html
+#EXPOSE 8080
+#CMD ["nginx", "-g", "daemon off;"]
