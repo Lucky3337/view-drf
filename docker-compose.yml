@@ -11,7 +11,7 @@ services:
       MYSQL_USER: 'root'
       MYSQL_PASSWORD: 'password'
       MYSQL_ROOT_PASSWORD: 'password'
-    hostname: db
+    hostname: 'db'
   web:
     restart: always
     environment:
