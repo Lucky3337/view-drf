@@ -6,6 +6,7 @@ from .permissions import IsUserOrReadOnly
 from .serializers import CreateUserSerializer, UserSerializer, CatSerializer
 from oauth2_provider.views.generic import ProtectedResourceView
 from oauth2_provider.contrib.rest_framework import TokenHasReadWriteScope, TokenHasScope
+from oauth2_provider.models import ApplicationManager
 
 
 from rest_framework.response import Response
@@ -137,7 +138,7 @@ class UserDetails(generics.GenericAPIView):
     def get_object(self, id):
         try:
             return User.objects.get(id=id)
-        except Video.DoesNotExist:
+        except User.DoesNotExist:
             raise Http404
 
 

@@ -51,7 +51,7 @@
         methods: {
             setLogin() {
                 $.ajax({
-                    url: 'http://localhost:8000/authentication/token/',
+                    url: 'http://84.201.170.191:8000/authentication/token/',
                     type: 'POST',
                     data: {
                         username: this.login,

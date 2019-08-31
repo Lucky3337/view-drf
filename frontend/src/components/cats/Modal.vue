@@ -94,7 +94,7 @@
         methods: {
             saveCat() {
                 $.ajax({
-                    url: 'http://localhost:8000/api/v1/cats/' + this.cat.pk + '/',
+                    url: 'http://84.201.170.191:8000/api/v1/cats/' + this.cat.pk + '/',
                     type: 'PUT',
                     data: {
                         'nickname': this.data.nickname,
@@ -111,7 +111,7 @@
             },
             deleteCat() {
                 $.ajax({
-                    url: 'http://localhost:8000/api/v1/cats/' + this.cat.pk + '/',
+                    url: 'http://84.201.170.191:8000/api/v1/cats/' + this.cat.pk + '/',
                     type: 'DELETE',
                     data: {
                         'nickname': this.data.nickname,

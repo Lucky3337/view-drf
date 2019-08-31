@@ -83,7 +83,7 @@
                 console.log('qu qu')
 				console.log(this.login)
                 $.ajax({
-                    url: 'http://localhost:8000/api/v1/users/',
+                    url: 'http://84.201.170.191:8000/api/v1/users/',
                     type: 'POST',
                     data: {
                         username: this.login,
@@ -93,7 +93,10 @@
 						this.$router.push({
 							name: 'login'
 						})
-                    }
+                    },
+                    error: (response) =>{
+                        alert(this.login + ' is exist! Please select another username and continue registration )');
+					}
                 })
 			}
         },

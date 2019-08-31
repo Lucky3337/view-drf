@@ -60,7 +60,7 @@
         methods: {
             loadCats() {
                 $.ajax({
-                    url: 'http://localhost:8000/api/v1/cats/',
+                    url: 'http://84.201.170.191:8000/api/v1/cats/',
                     type: 'GET',
                     success: (response) => {
                         console.log(response);
@@ -69,7 +69,7 @@
                     error: (response) => {
                         console.log(response);
                         $.ajax({
-                            url: 'http://localhost:8000/authentication/token/refresh/',
+                            url: 'http://84.201.170.191:8000/authentication/token/refresh/',
                             type: 'POST',
                             data: {
                                 refresh_token: localStorage.getItem("refresh_token"),
